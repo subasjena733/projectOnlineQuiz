@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./AddQns.css"
+import { backendUrl } from './BackendUrl.js';
 
 function AddQns() {
     //------------------Initialization---------------------
@@ -41,7 +42,7 @@ function AddQns() {
             setOpnC("");
             setAns("");
         }
-        let result= await fetch("http://localhost:8000/addquestion",
+        let result= await fetch(`${backendUrl}/addquestion`,
         {
             method:"post",
             body:JSON.stringify(data),

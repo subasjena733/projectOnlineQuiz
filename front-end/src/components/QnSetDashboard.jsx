@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./QnSetDashboard.css"
 import SetQns from './SetQns.jsx';
 import { useNavigate } from 'react-router-dom';
+import { backendUrl } from './BackendUrl.js';
 
 function QnSetDashboard() {
   let [qns,setQns]=useState([]);
@@ -11,7 +12,7 @@ function QnSetDashboard() {
   const qnSetId=window.location.search.slice(1);
   let [deleteButtonStatus,setDeleteButtonStatus]=useState(false);
   async function fetchQnSet(){
-     let result=await fetch(`http://localhost:8000/questionset/?id=${qnSetId}`);
+     let result=await fetch(`${backendUrl}/questionset/?id=${qnSetId}`);
     result=await result.json();
     // console.log(result);
     if(result[0]){
@@ -46,7 +47,7 @@ function QnSetDashboard() {
   // console.log(qns);
   async function handleDeleteSet() {
     // console.log(`Deleting:${qnSetId}....`)
-    let result=await fetch("http://localhost:8000/deleteset",{
+    let result=await fetch(`${backendUrl}/deleteset`,{
       method:"delete",
       body:JSON.stringify({_id:qnSetId}),
       headers:{

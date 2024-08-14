@@ -2,6 +2,7 @@ import React from 'react'
 import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react';
+import { backendUrl } from './BackendUrl.js';
 
 function LoginAdmin() {
      //--------------Initialization-------------
@@ -18,7 +19,7 @@ function LoginAdmin() {
      }
     async function login(){
         let data={email:userName,password:password,adminLogin:true}
-        let result=await fetch("http://localhost:8000/login",
+        let result=await fetch(`${backendUrl}/login`,
         {
             method:"post",
             body:JSON.stringify(data),

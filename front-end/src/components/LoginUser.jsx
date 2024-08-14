@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom'
+import { backendUrl } from './BackendUrl.js';
 
 function LoginUser() {
     // console.log("LoginUser Called");
@@ -18,7 +19,7 @@ function LoginUser() {
     }
     async function userLogin(){
         let data={email:userName,password:password,adminLogin:false}
-        let result=await fetch("http://localhost:8000/login",
+        let result=await fetch(`${backendUrl}/login`,
             {
                 method:"post",
                 body:JSON.stringify(data),

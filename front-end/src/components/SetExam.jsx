@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './SetExam.css'
 import { useNavigate } from 'react-router-dom'
+import { backendUrl } from './BackendUrl.js';
 
 function SetExam() {
   const navigate=useNavigate();
@@ -12,7 +13,7 @@ function SetExam() {
     navigate({pathname:"/questionsetdashboard",search:event.target.id});
   }
   async function getSets(){
-    let result=await fetch("http://localhost:8000/fetchqnsets",{});
+    let result=await fetch(`${backendUrl}/fetchqnsets`,{});
     result=await result.json();
     // console.log(result);
     result.forEach(element => {

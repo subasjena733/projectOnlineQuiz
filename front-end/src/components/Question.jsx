@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./Question.css"
 import Options from './Options.jsx';
+import { backendUrl } from './BackendUrl.js';
+
 function Question(props) {
   //---------------------Initialization-----------------
   let[qns_opns1,setQns_opns1]=useState([{}]);
@@ -11,7 +13,7 @@ function Question(props) {
     // qns_opns2=await qns_opns2.json();
     //-----update 1------------
     let search=window.location.search.slice(1);
-    let result=await fetch(`http://localhost:8000/questionset/?id=${search.split("/")[0]}`);
+    let result=await fetch(`${backendUrl}/questionset/?id=${search.split("/")[0]}`);
     result=await result.json();
     let qns_opns2=result[0].qnIds;
     //------------------------

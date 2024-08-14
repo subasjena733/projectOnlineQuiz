@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./QuestionDashboard.css"
 import { useNavigate } from 'react-router-dom';
+import { backendUrl } from './BackendUrl.js';
 
 function QuestionDashboard() {
     const navigate=useNavigate();
@@ -15,7 +16,7 @@ function QuestionDashboard() {
         // console.log(qnSetName);
         // console.log(qnIds);
         let data={qnSetName,qnIds}
-        let result=await fetch("http://localhost:8000/createset",
+        let result=await fetch(`${backendUrl}/createset`,
             {
                 method:"post",
                 body:JSON.stringify(data),
@@ -36,7 +37,7 @@ function QuestionDashboard() {
     }
     async function getQns(){
         let qns=[];
-        result=await fetch("http://localhost:8000/",{});
+        result=await fetch(`${backendUrl}/`,{});
         result=await result.json();
         // console.log(result);
         function qnSelect(event){

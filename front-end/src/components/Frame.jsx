@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Frame.css"
 import Question from "./Question.jsx"
 import { useLocation, useNavigate } from 'react-router-dom';
+import { backendUrl } from './BackendUrl.js';
 
 function Frame(props) {
 
@@ -15,7 +16,7 @@ function Frame(props) {
         //Sets currentSetAns array in DB to array of all 0 s
         // let tempAnsRecord=Array(parseInt(window.location.search.slice(1).split("/")[1])).fill("0");
         // console.log(tempAnsRecord);
-        let result= await fetch("http://localhost:8000/initialtempansrecord",
+        let result= await fetch(`${backendUrl}/initialtempansrecord`,
             {
                 method:"put",
                 body:JSON.stringify({noOfQns:window.location.search.slice(1).split("/")[1],email:localStorage.getItem("email")}),
@@ -38,7 +39,7 @@ function Frame(props) {
     };
     async function nextQn(ansList){
         // console.log(ansList);
-        let result= await fetch("http://localhost:8000/saveanswer",
+        let result= await fetch(`${backendUrl}/saveanswer`,
             {
                 method:"put",
                 body:JSON.stringify({MarkedOptions:ansList,email:localStorage.getItem("email")}),

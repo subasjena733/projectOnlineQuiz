@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import "./Login.css"
+import { backendUrl } from './BackendUrl.js';
 
 function Signup() {
+  // console.log(backendUrl);
   //--------------Initialization-------------
   let [name,setName]=useState("");
   let [email,setEmail]=useState("");
@@ -24,7 +26,7 @@ function Signup() {
   async function userSignup(){
     let data={name,email,password,adminLogin}
     // console.log(data);
-    let result=await fetch("http://localhost:8000/signup",
+    let result=await fetch(`${backendUrl}/signup`,
       {
         method:"post",
         body:JSON.stringify(data),

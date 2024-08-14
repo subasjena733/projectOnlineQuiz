@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import "./SubmitButton.css"
 import { useNavigate } from 'react-router-dom';
+import { backendUrl } from './BackendUrl.js';
 
 function SubmitButton() {
   let [mark,setMark]=useState(0);
   const navigate=useNavigate();
   async function getScore(){
-    let score=await fetch(`http://localhost:8000/score/`,
+    let score=await fetch(`${backendUrl}/score/`,
       {
       method:"put",
         body:JSON.stringify({setId:window.location.search.slice(1).split("/")[0],email:localStorage.getItem("email")}),

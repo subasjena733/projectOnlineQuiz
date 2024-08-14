@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import "./Result.css"
+import { backendUrl } from './BackendUrl.js';
 
 function Result() {
     let [resultPage,setResultPage]=useState([]);
     let [marks,setMarks]=useState({});
 
     async function getData(){
-        let qns=await fetch(`http://localhost:8000/questionset/?id=${window.location.search.slice(1)}`);
+        let qns=await fetch(`${backendUrl}/questionset/?id=${window.location.search.slice(1)}`);
         qns=await qns.json();
         // console.log(qns[0].qnIds);
-        let user=await fetch(`http://localhost:8000/getattemptedsets/?email=${localStorage.getItem("email")}`);
+        let user=await fetch(`${backendUrl}/getattemptedsets/?email=${localStorage.getItem("email")}`);
         user=await user.json();
         // console.log(user.examStatus);
         let ansRecord=[];
