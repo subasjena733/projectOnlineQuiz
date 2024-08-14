@@ -1,0 +1,17 @@
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 10px;
+}
+.username-email{
+    margin-left: 20px;
+    margin: 0;
+}
+.user-type{
+    text-align: center;
+}
+.profile-container button{
+    width: 100px;
+    margin: auto;
+}

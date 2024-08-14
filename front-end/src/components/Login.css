@@ -1,0 +1,38 @@
+.login-container{
+    display: flex;
+    padding-top: 5%;
+}
+.login-box{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: aqua;
+
+}
+.name{
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+}
+.username{
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+}
+.password{
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+}
+.login-button{
+    width: 80px;
+    height: 25px;
+    background-color: rgb(6, 157, 6);
+    border-radius: 4px;
+    
+}
+/*--------Hover-------------*/

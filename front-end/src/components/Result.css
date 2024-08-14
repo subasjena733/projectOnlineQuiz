@@ -1,0 +1,18 @@
+.rMarks{
+    padding-left: 50px;
+}
+.rSetQns{
+    padding-left: 50px;
+}
+.rOpns{
+    padding-left: 50px;
+}
+.ansStatus-correct{
+    color: green;
+}
+.ansStatus-wrong{
+    color: red;
+}
+.ansStatus-notAnswered{
+    color: orange;
+}

@@ -1,0 +1,21 @@
+.qn{
+    margin-top: 10px;
+    padding-left: 10%;
+}
+.opn{
+    margin-top: 10px;
+    padding-left: 10%;
+}
+.opn-a, .opn-b, .opn-c{
+    margin-top: 10px;
+    
+}
+.opn-a-content{
+    padding-bottom: 2px;
+}
+.save-clear-button{
+    margin-top: 30px;
+}
+.save-button{
+    margin-right: 10px;
+}

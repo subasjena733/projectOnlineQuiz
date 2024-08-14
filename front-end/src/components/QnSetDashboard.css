@@ -1,0 +1,35 @@
+.qn-container{
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+    height: 40px;
+}
+.qn-content{
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.sl-no{
+    width: 3%;
+    border: 1px,solid,rgb(6, 83, 113);
+    padding-top: 10px;
+    margin: 0;
+    text-align: center;
+}
+.question{
+    width: 77%;
+    border: 1px,solid,rgb(6, 83, 113);
+    padding: 10px;
+    margin: 0; 
+}
+.option{
+    width: 5%;
+    border: 1px,solid,rgb(6, 83, 113);
+    padding: 10px;
+    margin: 0;
+}
+.delete-button{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}

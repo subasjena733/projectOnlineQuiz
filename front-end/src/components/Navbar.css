@@ -1,0 +1,19 @@
+.navbar{
+    background-color: black;
+    width: 99vw;
+    margin: 0;
+}
+.navbar-links{
+    list-style: none;
+    display: flex;
+    column-gap: 4%;
+    padding: 10px 20px 10px 20px;
+    margin: 0;
+}
+.navbar-links li{
+    color: white;
+}
+.navbar-links li a{
+    text-decoration: none;
+    color: white;
+}
