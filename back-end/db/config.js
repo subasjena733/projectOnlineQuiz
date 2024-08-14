@@ -1,5 +1,8 @@
 const mongoose=require("mongoose")
-mongoose.connect("mongodb://127.0.0.1:27017/QnBank").then(()=>{
+require("dotenv").config();
+const MONGO_URL=process.env.MONGO_URL;
+// console.log(process.env.MONGO_URL)
+mongoose.connect(MONGO_URL).then(()=>{
     console.log("DB Connected");
 }).catch((err)=>{
     console.log(`Error:${err}`);

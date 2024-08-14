@@ -1,8 +1,11 @@
+require("dotenv").config();
 const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
 const cors=require("cors");
 const { type } = require("os");
+// console.log(`Env File Data:${process.env.PORT}`);
+const PORT=process.env.PORT;
 //-------------Middlewares--------------
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
@@ -148,6 +151,6 @@ app.delete("/deleteset",async (req,resp)=>{
     resp.send({msg:"Set Deleted"});
 });
 //----------Starting the Server-----------
-app.listen(8000,()=>{
+app.listen(PORT,()=>{
     console.log("Server Started....");
 });
